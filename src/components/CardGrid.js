@@ -1,8 +1,10 @@
 import 'rbx/index.css';
 import {Button, Card, Column, Content, Image} from 'rbx';
 import React from 'react';
+import {addToCart} from './ShoppingCart';
+import ShoppingCart from './ShoppingCart';
 
-const ShirtCard = ({title, image, price, priceFormat}) => (
+const ShirtCard = ({addToCart, title, image, price, priceFormat}) => (
     // <Card>
     //     <Card.Content>
     //         <Content>
@@ -33,15 +35,19 @@ const ShirtCard = ({title, image, price, priceFormat}) => (
                     <Button>L</Button>
                     <Button>XL</Button>
                 </Button.Group>
+                <Button.Group>
+                    <Button onClick={addToCart}>Add to cart</Button>
+                </Button.Group>
             </Card.Content>
         </Card>
     </Column>
 );
 
-const CardGrid = ({products}) => {
+const CardGrid = ({products, addToCart}) => {
     return (
-        <Column.Group vcentered multiline desktop mobile>
-            {products.map(product => <ShirtCard price={product.price} 
+        <Column.Group vcentered multiline>
+            {products.map(product => <ShirtCard addToCart = {()=>addToCart(product)}
+                                                price={product.price} 
                                                 priceFormat={product.currencyFormat} 
                                                 title={product.title} 
                                                 image={product.sku}/>)}
