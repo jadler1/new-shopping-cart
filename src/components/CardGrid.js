@@ -10,7 +10,7 @@ const ShirtCard = ({title, image, price, priceFormat}) => (
     //         </Content>
     //     </Card.Content>
     // </Card>
-    <Column>
+    <Column size="one-third">
         <Card>
             <Card.Header>
                 <Card.Header.Title>
