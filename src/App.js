@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'rbx/index.css';
-import { Button, Container, Title, Card, Table, Tab, Content } from 'rbx';
+import { Container} from 'rbx';
 import CardGrid from './components/CardGrid.js';
 
 const App = () => {
@@ -16,7 +16,9 @@ const App = () => {
   }, []);
 
   return (
-    <CardGrid products = {products}/>
+    <Container>
+      <CardGrid products = {products}/>
+    </Container>
   );
 };
 

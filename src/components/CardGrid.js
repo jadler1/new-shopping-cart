@@ -1,5 +1,5 @@
 import 'rbx/index.css';
-import {Card, Content, Column, Image} from 'rbx';
+import {Button, Card, Column, Content, Image} from 'rbx';
 import React from 'react';
 
 const ShirtCard = ({title, image, price, priceFormat}) => (
@@ -24,6 +24,15 @@ const ShirtCard = ({title, image, price, priceFormat}) => (
                 <Content>
                     {priceFormat}{price}
                 </Content>
+                <Content>
+                    Sizes:
+                </Content>
+                <Button.Group size="small">
+                    <Button>S</Button>
+                    <Button>M</Button>
+                    <Button>L</Button>
+                    <Button>XL</Button>
+                </Button.Group>
             </Card.Content>
         </Card>
     </Column>
