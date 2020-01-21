@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import 'rbx/index.css';
+import { Button, Container, Title, Card, Table, Tab, Content } from 'rbx';
+import CardGrid from './components/CardGrid.js';
 
 const App = () => {
   const [data, setData] = useState({});
@@ -13,10 +16,9 @@ const App = () => {
   }, []);
 
   return (
-    <ul>
-      {products.map(product => <li key={product.sku}>{product.title}</li>)}
-    </ul>
+    <CardGrid products = {products}/>
   );
 };
+
 
 export default App;
